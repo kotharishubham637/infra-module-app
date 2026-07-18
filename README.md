@@ -1,127 +1,218 @@
-<p align="center">
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&pause=1000&color=623CE4&center=true&vCenter=true&width=900&lines=Terraform+Multi-Environment+Infrastructure;Reusable+Terraform+Modules;AWS+Dev+%7C+Staging+%7C+Production;Infrastructure+as+Code+(IaC)" />
-</p>
-<p align="center">
-<img src="images/architecture.png" width="900">
-</p>
-🚀 Multi-Environment Infrastructure with Terraform Modules
+<div align="center">
 
-Provision Development, Staging, and Production environments on AWS using reusable Terraform modules.
+# 🚀 AWS Multi-Environment Infrastructure with Terraform Modules
 
-<p align="center"> <img src="https://img.shields.io/badge/Terraform-v1.15+-623CE4?style=for-the-badge&logo=terraform"> <img src="https://img.shields.io/badge/AWS-EC2-FF9900?style=for-the-badge&logo=amazonaws"> <img src="https://img.shields.io/badge/IaC-Infrastructure_as_Code-blue?style=for-the-badge"> <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge"> </p>
-📌 Project Overview
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&pause=1200&color=6C63FF&center=true&vCenter=true&width=900&lines=Terraform+Modules+Project;AWS+Dev+%7C+Staging+%7C+Production;Infrastructure+as+Code+(IaC);Reusable+Terraform+Modules;DevOps+Automation" />
 
-This project demonstrates how to provision multiple AWS environments using Terraform Modules.
+<br>
 
-Instead of duplicating infrastructure code, a reusable module is created and instantiated three times for:
+![](https://img.shields.io/badge/Terraform-v1.15+-623CE4?style=for-the-badge&logo=terraform)
+![](https://img.shields.io/badge/AWS-EC2-FF9900?style=for-the-badge&logo=amazonaws)
+![](https://img.shields.io/badge/IaC-Infrastructure_as_Code-blue?style=for-the-badge)
+![](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+![](https://img.shields.io/badge/Modules-Reusable-orange?style=for-the-badge)
 
-🟢 Development (Dev)
-🟡 Staging (Stg)
-🔴 Production (Prod)
+</div>
 
-Each environment has its own configuration while sharing the same infrastructure module.
+---
 
-🏗 Architecture
-                     Terraform Root Module
-                             │
-        ┌────────────────────┼────────────────────┐
-        │                    │                    │
-        ▼                    ▼                    ▼
-   Dev Module          Staging Module        Prod Module
-        │                    │                    │
-        ▼                    ▼                    ▼
-     EC2 Instance        EC2 Instance       EC2 Instances
-          │                  │                  │
-          ├──────────────► Security Group ◄─────┤
-                             │
-                             ▼
-                           AWS VPC
-📂 Project Structure
+# 📖 Project Overview
+
+This project demonstrates how to provision **Development**, **Staging**, and **Production** environments on **AWS** using **Terraform Modules**.
+
+Instead of writing infrastructure repeatedly, a reusable Terraform module is created once and instantiated multiple times for different environments.
+
+---
+
+# ✨ Features
+
+- 🚀 Multi-Environment Infrastructure
+- 📦 Reusable Terraform Modules
+- ☁️ AWS EC2 Provisioning
+- 🔐 Security Groups
+- 🌐 AWS VPC
+- 🪣 Amazon S3
+- 🗄️ DynamoDB
+- 📄 Variables & Outputs
+- ⚡ Infrastructure as Code (IaC)
+
+---
+
+# 🏗 Architecture
+
+```mermaid
+graph TD
+
+A["Terraform Root Module"]
+
+A --> B["Development"]
+A --> C["Staging"]
+A --> D["Production"]
+
+B --> E["EC2 Instance"]
+C --> F["EC2 Instance"]
+D --> G["EC2 Instance"]
+
+E --> H["Security Group"]
+F --> H
+G --> H
+
+H --> I["AWS VPC"]
+
+I --> J["Amazon S3"]
+I --> K["DynamoDB"]
+```
+
+---
+
+# 📂 Project Structure
+
+```text
 .
+├── README.md
 ├── main.tf
-├── provider.tf
-├── variables.tf
-├── outputs.tf
+├── .gitignore
 │
 └── infra-module-app
-    └── infra-app
-        ├── ec2.tf
-        ├── s3.tf
-        ├── dynamodb.tf
-        ├── security-group.tf
-        ├── variables.tf
-        └── outputs.tf
-⚙️ Technologies Used
-Terraform
-AWS EC2
-AWS S3
-AWS DynamoDB
-AWS VPC
-Security Groups
-Infrastructure as Code (IaC)
-🌍 Environments
-Environment	Instance Count	Instance Type
-Dev	1	t2.micro
-Staging	1	t2.small
-Production	2	t2.medium
-🚀 Deployment
+    ├── ec2.tf
+    ├── security-group.tf
+    ├── s3.tf
+    ├── dynamodb.tf
+    ├── variables.tf
+    └── outputs.tf
+```
 
-Initialize Terraform
+---
 
+# 🌍 Environments
+
+| Environment | Instance Count | Purpose |
+|-------------|---------------:|----------|
+| 🟢 Development | 1 | Development & Testing |
+| 🟡 Staging | 1 | Pre-Production Validation |
+| 🔴 Production | 2 | Live Production |
+
+---
+
+# 🚀 Deployment
+
+## Initialize Terraform
+
+```bash
 terraform init
+```
 
-Validate
+## Validate
 
+```bash
 terraform validate
+```
 
-Plan
+## Format
 
+```bash
+terraform fmt
+```
+
+## Plan
+
+```bash
 terraform plan
+```
 
-Apply
+## Apply
 
+```bash
 terraform apply
+```
 
-Destroy
+## Destroy
 
+```bash
 terraform destroy
-📦 Features
-Reusable Terraform Modules
-Multi-environment deployment
-Separate Dev / Staging / Production
-Parameterized infrastructure
-Easy scalability
-Infrastructure as Code
-Modular architecture
-📖 Learning Objectives
+```
 
-This project demonstrates:
+---
 
-Terraform Modules
-Variables
-Outputs
-Resource Reusability
-Multi-environment Infrastructure
-AWS Infrastructure Provisioning
-Infrastructure Automation
-📸 Architecture Diagram
+# 📚 Technologies Used
 
-Replace this with your own architecture image.
+- Terraform
+- AWS EC2
+- AWS VPC
+- Amazon S3
+- DynamoDB
+- Security Groups
+- Infrastructure as Code (IaC)
 
-/images/architecture.png
-📊 Future Improvements
-Terraform Remote Backend (S3 + DynamoDB)
-GitHub Actions CI/CD
-Jenkins Pipeline
-Ansible Integration
-Monitoring using Prometheus & Grafana
-Kubernetes Deployment
-Auto Scaling Group
-Load Balancer
-👨‍💻 Author
+---
 
-Shubham Kothari
+# 🎯 Learning Outcomes
 
-AWS & DevOps Enthusiast
-Terraform | Docker | Kubernetes | Jenkins | Linux
-⭐ If you found this project useful, don't forget to Star the repository!
+This project helped me understand:
+
+- Terraform Modules
+- Variables
+- Outputs
+- Resource Reusability
+- Multi-Environment Infrastructure
+- AWS Infrastructure Provisioning
+- Infrastructure Automation
+- Infrastructure as Code Best Practices
+
+---
+
+# 📈 Future Improvements
+
+- Terraform Remote Backend (S3 + DynamoDB)
+- GitHub Actions CI/CD
+- Jenkins Pipeline
+- Docker Integration
+- Kubernetes Deployment
+- Ansible Automation
+- Prometheus & Grafana Monitoring
+- Auto Scaling Groups
+- Load Balancer
+- Route53
+- ACM SSL Certificates
+
+---
+
+# 📸 Project Workflow
+
+```mermaid
+flowchart LR
+
+Developer --> Terraform
+
+Terraform --> AWS
+
+AWS --> Development
+
+AWS --> Staging
+
+AWS --> Production
+```
+
+---
+
+# 🌟 Repository
+
+If you found this project useful, consider giving it a ⭐.
+
+---
+
+<div align="center">
+
+## 👨‍💻 Author
+
+### **Shubham Kothari**
+
+💻 DevOps Engineer | AWS Cloud Enthusiast
+
+Terraform • Docker • Kubernetes • Jenkins • Linux • Git • AWS
+
+---
+
+### 🚀 Happy Terraforming!
+
+</div>
