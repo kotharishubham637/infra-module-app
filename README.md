@@ -1,3 +1,9 @@
+<p align="center">
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&pause=1000&color=623CE4&center=true&vCenter=true&width=900&lines=Terraform+Multi-Environment+Infrastructure;Reusable+Terraform+Modules;AWS+Dev+%7C+Staging+%7C+Production;Infrastructure+as+Code+(IaC)" />
+</p>
+<p align="center">
+<img src="images/architecture.png" width="900">
+</p>
 🚀 Multi-Environment Infrastructure with Terraform Modules
 
 Provision Development, Staging, and Production environments on AWS using reusable Terraform modules.
